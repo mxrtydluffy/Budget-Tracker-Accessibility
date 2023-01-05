@@ -16,6 +16,7 @@
             <div class="col-11 mx-auto pt-3">
                 <!--Title-->
                 <h1 class="text-uppercase mb-4">Budget App</h1>
+                <br>
                 <div class="row">
                     <div class=""> <!--col-md-7-->
                         <!--Budget Expenses Balance-->
@@ -55,15 +56,46 @@
                     </div>
                 </div>
 
+                <div class="col-md-7 my-3">
+                    <!--Expense Info-->
+                    <div class="expense-list d-flex justify-content-between text-captitalize">
+                        <h5 class="list-item">Maximum Expense</h5>
+                        <h5 class="list-item">Expense Value</h5>
+                    </div>
+                </div>
+
+                <br>
 
                 <!--Budget Form-->
-                <form action="">
-                    <h6 class="text-capitalize">Enter your Bugeted Amount</h6>
-                    <div class="form-group">
-                        <input type="number">
-                        <button type="submit">Calculate</button>
-                    </div>
-                </form>
+                <div class="d-flex justify-content-around">
+                    <form action="">
+                        <h6 class="text-capitalize">Enter Your Bugeted Amount</h6>
+                        <div class="form-group">
+                            <input type="number">
+                            <button type="submit">Calculate</button>
+                        </div>
+                    </form>
+
+                    
+                    <form action="" class="expense-form">
+                        <h5 class="text-capitalize">Enter Your Expense</h5>
+                        <div class="form-group">
+                            <input type="text" class="form-control expense-input">  <!--Remember to put ID here-->
+                        </div>
+                        <h5 class="text-capitalize">Enter Expense Amount</h5>
+                        <div class="form-group">
+                            <input type="number" class="form-control expense-input">    <!--Remember to put ID here-->
+                        </div>
+                        <button type="submit">Add expense</button>  <!--Remember to put ID here-->
+                    </form>
+
+                    
+
+                </div>
+
+                
+
+                
 
 
             </div>
