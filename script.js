@@ -38,18 +38,42 @@ class UI {
                 console.log(self);
                 self.budgetFeedback.classList.remove('showItem');
             }, 4000);
-        }
-        else{
+        } else {
             // All this is pointing back to the class
             // If there is some kind of value that is less than 0
             this.budgetAmount.textContent = value;
-            this.budgetInput.value = '';
+            this.budgetInput.value = "";
             this.showBalance();
         }
     }
     // Show balance
-    showBalance(){
-        console.log(`Is this working`);
+    showBalance() {
+        // Calculating the expense. Here we select a method rather than going to the UI class.
+        const expense = this.totalExpense();
+        // Need to grab value in budget. Line #44 pass the value then get it back.
+        const total = parseInt(this.budgetAmount.textContent) - expense;
+        // Grab the expense going to calculate later then get budget amount from text content where its run via parseINT.
+        this.balanceAmount.textContent = total;
+        if(total < 0) {
+            // Make sure to remove the other classes that is going to be added
+            this.balance.classList.remove("showGreen", "showBlack");
+            this.balance.classList.add('showRed');
+        }
+        else if (total > 0) {
+            // Make sure to remove the other classes that is going to be added
+            this.balance.classList.remove("showRed", "showBlack");
+            this.balance.classList.add("showGreen");
+        }
+        else if (total === 0) {
+            // Make sure to remove the other classes that is going to be added
+            this.balance.classList.remove("showRed", "showGreen");
+            this.balance.classList.add("showBlack");
+        }
+    }
+    // Total Expense
+    totalExpense() {
+        let total = 400;
+        return total;
     }
 }
 
