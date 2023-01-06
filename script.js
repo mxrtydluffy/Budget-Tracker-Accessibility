@@ -70,6 +70,21 @@ class UI {
             this.balance.classList.add("showBlack");
         }
     }
+    // Submit expense form
+    submitExpenseForm(){
+        const expenseValue = this.expenseInput.value;
+        const amountValue = this.amountInput.value;
+        if(expenseValue === '' || amountValue === '' || amountValue < 0)
+        {
+            this.expenseFeedback.classList.add('showItem');
+            this.expenseFeedback.innerHTML = `<p>Values cannot be empty or negative<p>`
+            const self = this;
+            setTimeout(function(){
+                self.expenseFeedback.classList.remove('showItem');
+            }, 4000);
+        }
+    }
+
     // Total Expense
     totalExpense() {
         let total = 400;
@@ -89,7 +104,7 @@ function eventListenters() {
     budgetForm.addEventListener("submit", function(event) {
         // Not going to be resubmitting everytime | No need to refresh
         event.preventDefault();
-        ui.submitBudgetForm();
+        ui.submitExpenseForm();
     });
 
     // Expense form submit
