@@ -1,4 +1,9 @@
-// Set variable to new UI and getting the instance of the class
+/*
+Set variable to new UI and getting the instance of the class
+
+Convenient because helps keep code clean. Class already has the
+contructor, the properties then initializing the methods below.
+*/
 
 class UI {
     constructor() {
@@ -16,6 +21,17 @@ class UI {
         this.itemList = [];
         this.itemID = 0;
     }
+
+    // Submit budget method
+    submitBudgetForm(){
+        console.log('Successfully submitted');
+        const value = this.budgetInput.value;
+        // Declaring the values
+        if(value === '' || value <0){
+            this.budgetFeedback.classList.add('showItem');  // ClassList has add or remove
+            this.budgetFeedback.innerHTML = `<p>value cannot be empty or negative</p>`;  // Inner HTML will not show p tag, if were to put textcontent it will show. Displaying ticks allows us to accomplish this.
+        }
+    }
 }
 
 function eventListenters() {
@@ -28,8 +44,9 @@ function eventListenters() {
 
     // Budget form submit
     budgetForm.addEventListener('submit', function(event){
-        // Not going to be resubmitting everytime 
+        // Not going to be resubmitting everytime | No need to refresh
         event.preventDefault();
+        ui.submitBudgetForm();
     });
 
     // Expense form submit
