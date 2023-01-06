@@ -31,11 +31,25 @@ class UI {
             this.budgetFeedback.classList.add('showItem');  // ClassList has add or remove
             this.budgetFeedback.innerHTML = `<p>value cannot be empty or negative</p>`;  // Inner HTML will not show p tag, if were to put textcontent it will show. Displaying ticks allows us to accomplish this.
             const self = this;
-            console.log(this);
+            // console.log(this);
+
             setTimeout(function(){
-                this.budgetFeedback.classList.remove('showItem');
-            },4000)
+                console.log(this);
+                console.log(self);
+                self.budgetFeedback.classList.remove('showItem');
+            }, 4000);
         }
+        else{
+            // All this is pointing back to the class
+            // If there is some kind of value that is less than 0
+            this.budgetAmount.textContent = value;
+            this.budgetInput.value = '';
+            this.showBalance();
+        }
+    }
+    // Show balance
+    showBalance(){
+        console.log(`Is this working`);
     }
 }
 
