@@ -14,85 +14,98 @@
     <div class="container-fluid">
         <div class="col-11 mx-auto pt-3">
             <!--Title-->
-            <h1 class="text-uppercase mb-4">Budget App</h1>
+            <h1 class="text-uppercase mb-4">Conservify</h1>
             <br>
             <div class="row">
-                <div class=""> <!--col-md-7-->
-                    <!--Budget Expenses Balance-->
-                    <div class="row my-3">
-                        <div class="col-4 text-center mb-2">
-                            <!--Budget-->
-                            <h6 class="text-uppercase info-title">Budget</h6>
-                            <span class="budget-icon">
-                                <!-- <i>Insert icon here</i> -->
-                            </span>
-                            <h4 class="text-uppercase mt-2 budget" id="budget">
-                                <span>$ </span>
-                                <span id="budget-amount">0</span>
-                            </h4>
-                        </div>
-                        <div class="col-4 text-center">
-                            <h6 class="text-uppercase info-title">Expenses</h6>
-                            <span class="expense-icon">
-                                <!-- <i>Insert icon here</i> -->
-                            </span>
-                            <h4 class="text-uppercase mt-2 expense" id="expense">
-                                <span>$ </span>
-                                <span id="expense-amount">0</span>
-                            </h4>   
-                        </div>
-                        <div class="col-4 text-center">
-                            <h6 class="text-uppercase info-title">Balance</h6>
-                            <span class="balance-icon">
-                                <!-- <i>Insert icon here</i> -->
-                            </span>
-                            <h4 class="text-uppercase mt-2 balance" id="balance">
-                                <span>$ </span>
-                                <span id="balance-amount">0 </span>
-                            </h4>
-                        </div>
+                <!--Budget Expenses Balance-->
+                <div class="row my-3">
+                    <div class="col-4 text-center mb-2">
+                        <!--Budget-->
+                        <h6 class="text-uppercase info-title">Budget</h6>
+                        <span class="budget-icon">
+                            <!-- <i>Insert icon here</i> -->
+                        </span>
+                        <h4 class="text-uppercase mt-2 budget" id="budget">
+                            <span>$ </span>
+                            <span id="budget-amount">0</span>
+                        </h4>
+                    </div>
+                    <div class="col-4 text-center">
+                        <h6 class="text-uppercase info-title">Expenses</h6>
+                        <span class="expense-icon">
+                            <!-- <i>Insert icon here</i> -->
+                        </span>
+                        <h4 class="text-uppercase mt-2 expense" id="expense">
+                            <span>$ </span>
+                            <span id="expense-amount">0</span>
+                        </h4>   
+                    </div>
+                    <div class="col-4 text-center">
+                        <h6 class="text-uppercase info-title">Balance</h6>
+                        <span class="balance-icon">
+                            <!-- <i>Insert icon here</i> -->
+                        </span>
+                        <h4 class="text-uppercase mt-2 balance" id="balance">
+                            <span>$ </span>
+                            <span id="balance-amount">0 </span>
+                        </h4>
                     </div>
                 </div>
             </div>
 
-            <div class="container">
-                <!--Expense Info-->
-                <div class="row my-3 expense-list text-captitalize">
-                    <div class="col-4 d-flex justify-content-center">
-                        <h5 class="list-item info-title">Maximum Expense</h5>
+            <!--Doesn't have ID-->
+
+
+            <div class="row">
+                <div class="row my-3">
+                    <div class="col-4 text-center mb-2">
+                        <h5 class="list-item">Maximum Expense</h5>
                     </div>
-                    <div class="col-4 d-flex justify-content-center">
-                        <h5 class="list-item info-title">Expense Value</h5>
+                    <div class="col-4 text-center">
+                        <h5 class="list-item">Expense Value</h5>
+                    </div>
+                    <div class="col-4 text-center">
+                        <h5 class="list-item">Expense Value</h5>
                     </div>
                 </div>
             </div>
-
-            <br>
 
             <!--Budget Form-->
-            <div class="d-flex justify-content-around">
-                <form id="budget-form" class="budget-form">
-                    <h5 class="text-capitalize">Enter Your Bugeted Amount</h5>
-                    <div class="form-group">
-                        <input type="number" class="form-control budget-input" id="budget-input">
+            <div class="row">
+                <div class="col-md my-5">
+                    <!-- Budget feedback -->
+                    <div class="budget-feedback alert alert-danger text-capitalize">budget feedback</div>
+                    <!--Budget Information-->
+                    <form id="budget-form" class="budget-form">
+                        <h5 class="text-capitalize">Enter Your Bugeted Amount</h5>
+                        <div class="form-group">
+                            <input type="number" class="form-control budget-input" id="budget-input">
+                        </div>
                         <!--Submit button information-->
+                        <br>
                         <button type="submit" class="btn text-capitalize budget-submit" id="budget-submit">Calculate</button>
-                    </div>
-                </form>
-                
-                <form class="expense-form" id="expense-form">
-                    <h5 class="text-capitalize">Enter Your Expense</h5>
-                    <div class="form-group">
-                        <input type="text" class="form-control expense-input" id="expense-input">
-                    </div>
-                    <br>
-                    <h5 class="text-capitalize">Enter Expense Amount</h5>
-                    <div class="form-group">
-                        <input type="number" class="form-control expense-input" id="amount-input">
-                    </div>
-                    <button type="submit" class="btn text-cpaitalize expense-submit" id="expense-submit">Add expense</button>
-                </form>
+                    </form>
+                </div>
+
+                <div class="col-md my-5">
+                    <form class="expense-form" id="expense-form">
+                        <h5 class="text-capitalize">Enter Your Expense</h5>
+                        <div class="form-group">
+                            <input type="text" class="form-control expense-input" id="expense-input">
+                        </div>
+                        <br>
+                        <h5 class="text-capitalize">Enter Expense Amount</h5>
+                        <div class="form-group">
+                            <input type="number" class="form-control expense-input" id="amount-input">
+                        </div>
+                        <!--Submit Button-->
+                        <br>
+                        <button type="submit" class="btn text-cpaitalize expense-submit" id="expense-submit">Add expense</button>
+                    </form>
+                </div>
+
             </div>
+
         </div>
     </div>
 
