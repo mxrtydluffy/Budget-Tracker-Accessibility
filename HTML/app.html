@@ -53,56 +53,63 @@
                 </div>
             </div>
 
+            <!--Information for Expenses Balance-->
             <div class="row">
-                <div class="row my-3">
-                    <div class="col-4 text-center mb-2">
+                <div class="row my-3 text-center">
+                    <div class="col-4 mb-2">
                         <h5 class="list-item">Maximum Expense</h5>
                     </div>
-                    <div class="col-4 text-center">
+                    <div class="col-4">
                         <h5 class="list-item">Expense Value</h5>
                     </div>
-                    <div class="col-4 text-center">
+                    <div class="col-4">
                         <h5 class="list-item">Expense Value</h5>
                     </div>
                 </div>
             </div>
 
-            <!--Budget Form-->
-            <div class="row">
-                <div class="col-md my-5">
-                    <!-- Budget feedback -->
-                    <div class="budget-feedback alert alert-danger text-capitalize">budget feedback</div>
-                    <!--Budget Information-->
-                    <form id="budget-form" class="budget-form">
-                        <h5 class="text-capitalize">Enter Your Bugeted Amount</h5>
-                        <div class="form-group">
-                            <input type="number" class="form-control budget-input" id="budget-input">
-                        </div>
-                        <!--Submit button information-->
-                        <br>
-                        <button type="submit" class="btn text-capitalize budget-submit" id="budget-submit">Calculate</button>
-                    </form>
-                </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md my-5">
+                        <!-- Budget feedback -->
+                        <div class="budget-feedback alert alert-danger text-capitalize">budget feedback</div>
+                        <!--Budget Information-->
+                        <form id="budget-form" class="budget-form">
+                            <h5 class="text-capitalize">Enter Your Bugeted Amount</h5>
+                            <div class="form-group">
+                                <input type="number" class="form-control budget-input" id="budget-input">
+                            </div>
+                            <!--Submit button information-->
+                            <br>
+                            <button type="submit" class="btn text-capitalize budget-submit" id="budget-submit">Calculate</button>
+                        </form>
 
-                <div class="col-md my-5">
-                    <!--Expense Feedback-->
-                    <div class="expense-feedback alert alert-danger text-capitalize">expense feedback</div>
-                    <!--Expense Form-->
-                    <form class="expense-form" id="expense-form">
-                        <h5 class="text-capitalize">Enter Your Expense</h5>
-                        <div class="form-group">
-                            <input type="text" class="form-control expense-input" id="expense-input">
+                        <div class="col-md my-5">
+                            <!--Expense Feedback-->
+                            <div class="expense-feedback alert alert-danger text-capitalize">expense feedback</div>
+                            <!--Expense Form-->
+                            <form class="expense-form" id="expense-form">
+                                <h5 class="text-capitalize">Enter Your Expense</h5>
+                                <div class="form-group">
+                                    <input type="text" class="form-control expense-input" id="expense-input">
+                                </div>
+                                <br>
+                                <h5 class="text-capitalize">Enter Expense Amount</h5>
+                                <div class="form-group">
+                                    <input type="number" class="form-control expense-input" id="amount-input">
+                                </div>
+                                <!--Submit Button-->
+                                <br>
+                                <button type="submit" class="btn text-cpaitalize expense-submit" id="expense-submit">Add expense</button>
+                            </form>
                         </div>
-                        <br>
-                        <h5 class="text-capitalize">Enter Expense Amount</h5>
-                        <div class="form-group">
-                            <input type="number" class="form-control expense-input" id="amount-input">
-                        </div>
-                        <!--Submit Button-->
-                        <br>
-                        <button type="submit" class="btn text-cpaitalize expense-submit" id="expense-submit">Add expense</button>
-                    </form>
+                    </div>
+
+                    <div class="col-md my-5 text-center">
+                        <h6>Information for expenses go here</h6>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </div>
