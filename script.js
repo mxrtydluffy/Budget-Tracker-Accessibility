@@ -34,12 +34,14 @@ class UI {
             // console.log(this);
 
             setTimeout(function(){
+                // Call back function
                 console.log(this);
                 console.log(self);
+                // Setting it back to default
                 self.budgetFeedback.classList.remove('showItem');
             }, 4000);
         } else {
-            // All this is pointing back to the class
+            // All this is doing is pointing back to the class
             // If there is some kind of value that is less than 0
             this.budgetAmount.textContent = value;
             this.budgetInput.value = "";
@@ -82,6 +84,20 @@ class UI {
             setTimeout(function(){
                 self.expenseFeedback.classList.remove('showItem');
             }, 4000);
+        }
+        else{
+            let amount = parseInt(amountValue);
+            this.expenseInput = "";
+            this.amountInput = "";
+
+            let expense = {
+                id:this.itemID,
+                title: expenseValue,
+                amount: amount,
+            }
+            // Increment each item that is adding has a unique ID
+            this.itemID++
+            this.itemList.push(expense)
         }
     }
 
