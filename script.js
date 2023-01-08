@@ -131,7 +131,7 @@ class UI {
         // Set amount to 0 since its our starting
         let total = 0;
         if(this.itemList.length > 0){
-            // reduce takes a callback function which takes two parameters
+            // reduce() takes a callback function which takes two parameters
             // It is then looped through the array and the return account returns each & every iteration.
             total = this.itemList.reduce(function(acc,curr){
                 console.log(`Total is ${acc} and the current value is ${curr.amount}`);
@@ -142,6 +142,42 @@ class UI {
         }
         this.expenseAmount.textContent = total;
         return total;
+    }
+    // Edit expense  |   Getting access via data-id to get access to the icon
+    editExpense(element){
+        let id = parseInt(element.dataset.id);
+        // Need to get parent bc in div class id='expense-list'
+        let parent = element.parentElement.parentElement.parentElement
+        // First, remove from the DOM
+        this.expenseList.removeChild(parent);
+        // Second, remove from the array. Here filter is being used to find the 
+        // item in the function that has the id same as #148. Return a new array
+        let expense = this.itemList.filter(function(item){
+            return item.id === id;
+        })
+        // Show value
+        this.expenseInput.value = expense[0].title;     // Gets value back to form whcih removes from the expenses and balance.
+        this.amount.Input.value = expense[0].amount;
+        // Third, work with rest of the DOM
+        let tempList = this.itemList.filter(function(item){
+            return item.id != id;
+        })
+        this.itemList = tempList;
+        this.showBalance();
+    }
+    // Delete Expense
+    deleteExpense(element){
+        let id = parseInt(element.dataset.id);
+        // Need to get parent bc in div class id='expense-list'
+        let parent = element.parentElement.parentElement.parentElement
+        // First, remove from the DOM
+        this.expenseList.removeChild(parent);
+        // Remove from the list
+        let tempList = this.itemList.filter(function(item){
+            return item.id != id;
+        })
+        this.itemList = tempList;
+        this.showBalance();
     }
 }
 
@@ -167,7 +203,17 @@ function eventListenters() {
     });
 
     // Expense click
-    expenseList.addEventListener("click", function() {});
+    expenseList.addEventListener("click", function(event) {
+        // Need to search for its class
+        if(event.target.parentElement.classList.contains('edit-icon')){
+            // Need to get function
+            ui.editExpense(event.target.parentElement)
+        }
+        else if(event.target.parentElement.classList.contains('delete-icon')){
+            ui.deleteExpense(event.target.parentElement)
+        }
+        
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function() {
