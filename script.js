@@ -76,6 +76,7 @@ class UI {
     submitExpenseForm(){
         const expenseValue = this.expenseInput.value;
         const amountValue = this.amountInput.value;
+        // Checking for values
         if(expenseValue === '' || amountValue === '' || amountValue < 0)
         {
             this.expenseFeedback.classList.add('showItem');
@@ -84,11 +85,10 @@ class UI {
             setTimeout(function(){
                 self.expenseFeedback.classList.remove('showItem');
             }, 4000);
-        }
-        else{
-            let amount = parseInt(amountValue);
-            this.expenseInput = "";
-            this.amountInput = "";
+        } else {
+            let amount = parseInt(amountValue);     // Converting from string to int
+            this.expenseInput.value = "";
+            this.amountInput.value = "";
 
             let expense = {
                 id:this.itemID,
@@ -96,11 +96,11 @@ class UI {
                 amount: amount,
             }
             // Increment each item that is adding has a unique ID
-            this.itemID++
+            this.itemID++;
             this.itemList.push(expense);
             // Point to method present
             this.addExpense(expense);
-            // Show balance
+            this.showBalance();
         }
     }
     // Add expense
@@ -128,7 +128,19 @@ class UI {
 
     // Total Expense
     totalExpense() {
-        let total = 400;
+        // Set amount to 0 since its our starting
+        let total = 0;
+        if(this.itemList.length > 0){
+            // reduce takes a callback function which takes two parameters
+            // It is then looped through the array and the return account returns each & every iteration.
+            total = this.itemList.reduce(function(acc,curr){
+                console.log(`Total is ${acc} and the current value is ${curr.amount}`);
+                // Need current amount since looping through the array
+                acc += curr.amount
+                return acc;
+            },0);
+        }
+        this.expenseAmount.textContent = total;
         return total;
     }
 }
