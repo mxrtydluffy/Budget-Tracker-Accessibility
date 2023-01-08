@@ -147,21 +147,21 @@ class UI {
     editExpense(element){
         let id = parseInt(element.dataset.id);
         // Need to get parent bc in div class id='expense-list'
-        let parent = element.parentElement.parentElement.parentElement
+        let parent = element.parentElement.parentElement.parentElement;
         // First, remove from the DOM
         this.expenseList.removeChild(parent);
         // Second, remove from the array. Here filter is being used to find the 
         // item in the function that has the id same as #148. Return a new array
         let expense = this.itemList.filter(function(item){
             return item.id === id;
-        })
+        });
         // Show value
         this.expenseInput.value = expense[0].title;     // Gets value back to form whcih removes from the expenses and balance.
-        this.amount.Input.value = expense[0].amount;
+        this.amountInput.value = expense[0].amount;
         // Third, work with rest of the DOM
         let tempList = this.itemList.filter(function(item){
             return item.id != id;
-        })
+        });
         this.itemList = tempList;
         this.showBalance();
     }
@@ -169,13 +169,13 @@ class UI {
     deleteExpense(element){
         let id = parseInt(element.dataset.id);
         // Need to get parent bc in div class id='expense-list'
-        let parent = element.parentElement.parentElement.parentElement
+        let parent = element.parentElement.parentElement.parentElement;
         // First, remove from the DOM
         this.expenseList.removeChild(parent);
         // Remove from the list
         let tempList = this.itemList.filter(function(item){
             return item.id != id;
-        })
+        });
         this.itemList = tempList;
         this.showBalance();
     }
