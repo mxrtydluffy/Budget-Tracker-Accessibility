@@ -90,6 +90,7 @@ class UI {
             this.expenseInput.value = "";
             this.amountInput.value = "";
 
+            // Since let is changing it needs to be updated everytime
             let expense = {
                 id:this.itemID,
                 title: expenseValue,
@@ -107,6 +108,7 @@ class UI {
     addExpense(expense){
         const div = document.createElement('div');
         div.classList.add('expense');
+        // Adds to HTML when documenting the inputs
         div.innerHTML = `
         <div class="expense-item d-flex justify-content-around">
 
@@ -217,5 +219,6 @@ function eventListenters() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    // Need to call back function bc without it won't run.
     eventListenters();
 });
