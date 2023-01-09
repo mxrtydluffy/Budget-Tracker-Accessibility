@@ -5,10 +5,19 @@
     --mainRed: #b80c09;
     --mainBlue: #05668d;
   }
-  
-  body {
-    background: var(--mainWhite);
-    color: var(--mainDark);
+
+  body{
+    background-color: #dee2fc;
+  }
+
+  .main-logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  img {
+    width: 100px;
+    height: auto;
   }
 
   .budget-feedback,
