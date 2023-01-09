@@ -1,0 +1,21 @@
+.main-header {
+font-family: "Roboto";    
+}
+
+.btn1 {
+    border-width: 0;
+    border-radius: 20px;
+    background-color: #ffdda9;
+    height: 50px;
+    width: 160px;
+    font-weight: bold;
+}
+
+.btn2 {
+    border-width: 0;
+    border-radius: 20px;
+    background-color: #525888;
+    height: 50px;
+    width: 160px;
+    font-weight: bold;
+}
