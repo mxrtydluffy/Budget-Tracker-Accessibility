@@ -1,7 +1,7 @@
 # Budget Tracker
 
 ## Overview
-Updated project that addresses accessibility for users.
+Budget tracker project that provides accessibility for users.
 
 ## Outline
 * Home Page
