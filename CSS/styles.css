@@ -29,16 +29,18 @@
     border: 0.15rem solid var(--mainGreen);
     padding: 1rem;
     border-radius: 0.25rem;
+    background-color: #FFF8E8;
   }
 
   .expense-form {
     border: 0.15rem solid var(--mainRed);
     padding: 1rem;
     border-radius: 0.25rem;
+    background-color: #FFF8E8;
   }
 
   .budget-submit {
-    background: transparent;
+    background-color: transparent;
     border: 0.1rem solid var(--mainGreen);
     color: var(--mainGreen);
   }
